@@ -1,12 +1,16 @@
 body {
   margin: 0;
-  font-family: 'Barlow', 'Noto Sans KR', sans-serif;
+  font-family: 'Abel', 'Noto Sans KR', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #1b272c;
+  color: rgb(241, 241, 241);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* $main-color: rgb(241, 241, 241);
+$sub-color: #1b272c; */
