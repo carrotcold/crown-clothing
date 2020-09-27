@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #1b272c;
   color: rgb(241, 241, 241);
+  padding: 20px 60px;
 }
 
 code {
