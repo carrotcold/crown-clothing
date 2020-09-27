@@ -3,7 +3,9 @@ import { withRouter } from 'react-router-dom';
 
 import './menu-item.styles.scss';
 
-const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
+// history, match 는 위에서 내리 꽂아준 props가 아니지만
+// withRouter라는 HOC를 이용하여 접근가능하게 만들 수 있다.
+const MenuItem = ({ title, imageUrl, size, linkUrl, history, match }) => (
   <div
     className={`${size} menu-item`}
     onClick={() => history.push(`${match.url}${linkUrl}`)}
