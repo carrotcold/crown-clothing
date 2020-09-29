@@ -20,3 +20,7 @@ a {
 
 /* $main-color: rgb(241, 241, 241);
 $sub-color: #1b272c; */
+
+* {
+  box-sizing: border-box;
+}

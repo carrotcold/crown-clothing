@@ -2,27 +2,38 @@ $main-color: #1a272c;
 $sub-color: #f1f1f1;
 
 .custom-button {
-  min-width: 165px;
+  min-width: 160px;
   width: auto;
   height: 50px;
   letter-spacing: 0.5px;
   line-height: 50px;
-  padding: 0 35px 0 35px;
-  font-size: 15px;
+  padding: 0 15px;
+  margin: 0 5px 5px 0;
+  font-size: 14px;
   background-color: $sub-color;
   color: $main-color;
+  opacity: 0.9;
   text-transform: uppercase;
   font-family: inherit;
   font-weight: bolder;
   border: none;
   cursor: pointer;
 
-  transition: font-size 100ms ease-in-out;
-
   &:hover {
-    font-size: 20px;
     background-color: $main-color;
     color: $sub-color;
     border: 1px solid $sub-color;
+  }
+
+  &.google-sign-in {
+    background-color: $sub-color;
+    color: $main-color;
+    border: 1px solid $main-color;
+
+    &:hover {
+      background-color: #2e5da8;
+      color: $sub-color;
+      border: 1px solid $sub-color;
+    }
   }
 }
