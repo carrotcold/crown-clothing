@@ -13,6 +13,36 @@ const config = {
   measurementId: process.env.REACT_APP_MEASUREMENT_ID,
 };
 
+export const createUserProfileDocument = async (userAuth, additionalData) => {
+  if (!userAuth) return;
+
+  // firestore.doc 은 해당 위치 데이터 유무와 무관하게 queryReference 를 반환
+  const userRef = firestore.doc(`users/${userAuth.uid}`);
+  // 그 레퍼런스로 스냅샷을 가져와서 데이터가 있다면 저장한다
+  const snapShot = await userRef.get();
+
+  // DocSnapshot 메소드 .exists 사용
+  if (!snapShot.exists) {
+    const { displayName, email, photoURL, phoneNumber } = userAuth;
+    const createdAt = new Date();
+
+    try {
+      await userRef.set({
+        displayName,
+        email,
+        photoURL,
+        phoneNumber,
+        createdAt,
+        ...additionalData,
+      });
+    } catch (error) {
+      console.warn('set 실패', error);
+    }
+  }
+
+  return userRef;
+};
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
